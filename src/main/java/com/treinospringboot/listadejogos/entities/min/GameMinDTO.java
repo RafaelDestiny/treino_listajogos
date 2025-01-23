@@ -1,8 +1,8 @@
-package com.treinospringboot.listadejogos.dto;
+package com.treinospringboot.listadejogos.entities.min;
 
 import com.treinospringboot.listadejogos.entities.Game;
 
-public class gameminDTO {
+public class GameMinDTO {
 	
 	private Long id;
 	private String title;
@@ -10,18 +10,20 @@ public class gameminDTO {
 	private String imgUrl;
 	private String shortDescription;
 	
-	public gameminDTO() {
+	public GameMinDTO() {
+		
+		
+	}
 	
+	public GameMinDTO(Game entity) {
+		id = entity.getId();
+		title = entity.getTitle();
+		year = entity.getYear();
+		imgUrl = entity.getImgUrl();
+		shortDescription = entity.getShortDescription();
 	}
 
-	public gameminDTO(Game entity) {
-		
-		this.id = entity.getId();
-		this.title = entity.getTitle();
-		this.year = entity.getYear();
-		this.imgUrl = entity.getImgUrl();
-		this.shortDescription = entity.getShortDescription();
-	}
+	
 
 	public Long getId() {
 		return id;
@@ -42,9 +44,5 @@ public class gameminDTO {
 	public String getShortDescription() {
 		return shortDescription;
 	}
-	
-
-
-
 
 }
